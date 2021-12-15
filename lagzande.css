@@ -1,0 +1,115 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+
+}
+.list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background-color: gray;
+    padding: 1rem;
+    overflow: scroll;
+}
+.list1{
+    padding:0 2rem;
+}
+.list3, .list10{
+    
+    background-color: green;
+    
+}
+
+
+@media  screen and (max-width:600px){
+   .list{
+       align-content:center;
+   }
+    .list3{
+        flex-grow: 1;
+        background-color: hotpink;
+    }
+} */
+
+.container{
+display: grid;
+grid-template-columns: repeat(3,1fr);
+grid-template-rows: 50px 190px 100px 200px 50px;
+/* gap: 3px; */
+grid-template-areas: 
+    "ta tc tc"
+    "tbb tc tc"
+    "tbb te td"
+    "tbb te ."
+    "tbb te ."
+    "tf tf tf"
+;
+
+}
+.a{
+grid-area: ta;
+background-color: indigo;
+}
+.c{
+    grid-area: tc;
+    background-color: indianred;
+}
+.b{
+    grid-area: tbb;
+    background-color: lawngreen;
+    align-self: stretch;
+    align-content: stretch;
+}
+.b span{
+    height: 100%;
+}
+.d{
+    grid-area: td;
+    background-color: lightpink;
+}
+.e{
+    grid-area: te;
+    background-color: lightslategray;
+}
+.f{
+    grid-area: tf;
+    background-color: olivedrab;
+}
+.container div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+span{
+    padding: 10px;
+}
+
+@media  screen and (max-width:500px) {
+    .container{
+        grid-template-rows: 50px 150px 200px 200px 150px 100px 50px ;
+        grid-template-areas: 
+    "ta ta ta"
+    "tc tc tc"
+    "tb tb tb"
+    "tb tb tb"
+    "te te te"
+    "td td td"
+    "tf tf tf"
+;
+    }
+    
+}
